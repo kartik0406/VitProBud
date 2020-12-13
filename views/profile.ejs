@@ -1,0 +1,47 @@
+<%- include ('partials/header') %>
+
+<div class="container">
+  <div class="user-details row">
+    <div class="col s2">
+      <img id="profileImg" src="/<%=user.img.path%>" alt="" />
+    </div>
+    <div class="col s10 user-info">
+      <h2><%=user.email%></h2>
+      <p>About me: <%=user.about%></p>
+      <p>Vit Email: <%=user.username%></p>
+      <p>Institute: <%=user.institute%></p>
+      <p>Favourite Programming Languages: <%=user.language%></p>
+      <p><a href="<%=user.github%>"><%=user.github%></a></p>
+      <p><a href="<%=user.linkedIn%>"><%=user.linkedIn%></a></p>
+    </div>
+    <div class="col lg-4 text-right" style="padding-right: 4.5rem; margin-left: 13.5rem">
+      <a href="/editprofile">
+        <button class="btn center text-right waves-effect waves-light black lighten-5 white-text" type="submit">
+          Edit profile
+        </button></a>
+    </div>
+
+    <div class="col lg-4 text-right" style="padding-right: 4.5rem">
+      <a href="/showgotrequest">
+        <button class="btn center text-right waves-effect waves-light black lighten-5 white-text" type="submit">
+          Project Requests
+        </button></a>
+    </div>
+
+    <div class="col lg-4 text-right" style="padding-right: 4.5rem">
+      <a href="/request">
+        <button class="btn center text-right waves-effect waves-light black lighten-5 white-text" type="submit">
+          Your applications
+        </button></a>
+    </div>
+    <div class="col lg-4 text-right" style="padding-right: 4.5rem">
+      <a href="/userprofile/editproject">
+        <button class="btn center text-right waves-effect waves-light black lighten-5 white-text" type="submit">
+          Edit Project
+        </button></a>
+    </div>
+
+  </div>
+</div>
+
+<%- include ('partials/footer') %>

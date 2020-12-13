@@ -1,0 +1,29 @@
+<%- include ('partials/header') %>
+ <div>
+    <div class="row">
+        <div class="col s6">
+            <img src="../public/images/pen.png">
+        </div>
+        <div class="col s6">
+            <div class="text-box">
+                <h1>VIT PROJECT PORTAL</h1>
+                <p>Development Leads To Invention</p>
+                <div class="button-box">
+                    <% if(!user){ %>
+                        <a class="waves-effect waves-dark btn-flat" href="/projects">Skip For Now</a>
+                     <%}else{%>
+                    <a class="waves-effect waves-dark btn-flat" href="/projects">Go To Portal</a>
+                     <%}%>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+    <div class="row Copyright">
+        <p>Copyright&#169; 2020 Kartik Khanna</p>
+    </div>
+</div>  
+
+
+<%- include ('partials/footer') %> 

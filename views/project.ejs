@@ -1,0 +1,37 @@
+<%- include ('partials/header') %>   
+
+
+
+<div class="container">
+    <div class="head">
+      <h1>Apply for Different projects and enhance your development skills</h1>
+      <a class="waves-effect waves-light btn-large black login" href="/projects/new">Create a Project</a>
+    </div>
+  
+    <div class="row">
+      
+
+         <% projects.forEach(function(project){%>
+            <div class="col s12 m6">
+              <div class="card"><a href="/projects/<%=project._id%>">
+                
+                  <span class="card-title"></span> 
+                <div class="card-content">
+                  <p><%=project.title%></p>
+                  <p><%=project.descrip.substring(0,15)%>...</p>
+                </div>
+              
+                <div class="card-action">
+                  <a href="/userprofile/<%=project.owner.id%>" id="author"><span class="author-tag">Created By:  </span><%=project.owner.username%></a>                  
+                  <p style="margin-left: 24px;"><a href="#" id="author"><span class="author-tag">Max:</span><%=project.max%></a>                  
+                  <a href="#" id="author"><span class="author-tag">Want:</span><%=project.need%></a></p>            
+                </div>
+              </a></div>
+            </div>
+         <% });%>
+       
+    </div>
+  </div>
+  
+
+<%- include ('partials/footer') %> 

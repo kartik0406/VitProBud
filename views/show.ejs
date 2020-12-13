@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body{
+            background-color: #14274e;
+        }
+        h1{
+            font-size: 50px;
+            font-style: italic;
+            text-align: center;
+            color: whitesmoke;
+        }
+        h2{
+            color: #ffffff;
+            font-size: 1.8rem;
+            padding-left: 2rem;
+        }
+        p{
+            color:black;
+            padding-left: 2rem;
+        }
+        button{
+            width: 10%;
+            margin-left: 4%;
+        }
+        .btn-large{
+          font-family:'Times New Roman', Times, serif;
+        }
+        .space{
+          margin-left: 10rem;
+        }
+        #project{
+          font-size: 3rem;
+        }
+        .members{
+          font-weight:500;
+        }
+       
+#profileImg
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+#smallprofileImg
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 5px;
+    float: right;
+}
+
+    </style>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>   
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper indigo darken-4">
+      <a href="/" class="brand-logo center">VIT PRO BUD</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">About</a></li>
+        <li><a href="/projects">Projects</a></li>
+      <%  if(!user){%>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+      <%  }else{ %>
+           <li><a href="/logout">logout</a></li>
+           <li><a href="/userprofile"> <img id="smallprofileImg" src="/<%= user.img.path %>" alt=""></a></li>
+      <%  } %>
+      
+      </ul>
+    </div>
+  </nav>
+    <h1>Project Details</h1>
+
+   <div class="row" style="margin-top: 10rem;">
+    <div class="col s12 m12 l12">
+
+      
+      <div class="card">
+        <div class="card-image">
+        
+          <span class="card-title members" id="project">  <%=project.title%>  <span style="font-size: 20px;">by <%=project.owner.username%></span></span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p><%=project.descrip%></p>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-title" style="padding-left: 10px; padding-top: 10px;">Technologies Required</span>
+        <div class="card-content ">
+          <p class="members"><%=project.technologies%></p>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-title" style="padding-left: 10px; padding-top: 10px;">Team Members</span>
+        <div class="card-content">
+          <p class="members"><span> Maximum Members: <%=project.max%></span> 
+            <span class="space"> Members Needed: <%=project.need%></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="center" style="margin-bottom: 2rem;">
+    <form action="/request/<%=project._id%>" method="post">
+     <% if(user){%>
+    <button type="submit" class="waves-effect waves-light btn-large grey lighten-5 black-text">apply</button>
+      </form>
+      <%}else{%>
+        <a href="/login" class="waves-effect waves-light btn-large grey lighten-5 black-text">apply</a>
+      <%}%>
+ 
+  
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>                  <!-- jquery should come before materialize.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+</body>
+</html>

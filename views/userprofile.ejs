@@ -1,0 +1,22 @@
+<%- include ('partials/header') %>
+
+<div class="container">
+  <div class="user-details row">
+    <div class="col s2">
+      <img id="profileImg" src="/<%=puser.img.path%>" alt="" />
+    </div>
+    <div class="col s10 user-info">
+      <h2><%=puser.email%></h2>
+      <p>About me: <%=puser.about%></p>
+      <p>Vit Email: <%=puser.username%></p>
+      <p>Institute: <%=puser.institute%></p>
+      <p>Favourite Programming Languages: <%=puser.language%></p>
+      <p><a href="<%=puser.github%>"><%=puser.github%></a></p>
+      <p><a href="<%=puser.linkedIn%>"><%=puser.linkedIn%></a></p>
+    </div>
+    
+
+  </div>
+</div>
+
+<%- include ('partials/footer') %>

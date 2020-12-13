@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Details</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+      html, body {
+      min-height: 100%;
+      background-color: #14274e;
+      color:black;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color:black;
+      }
+      h1 {
+      margin: 0;
+      font-weight: 400;
+      }
+      h3 {
+      margin: 12px 0;
+      color: #8ebf42;
+      }
+      .main-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      }
+      fieldset {
+      border: none;
+      border-top: 1px solid #8ebf42;
+      }
+      .project-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 30rem;
+      padding-top: 2rem;
+      
+      }
+      .project-details >div{
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      }
+      .project-details >div, input, label {
+      width: 100%;
+      }
+      label {
+      padding: 0 5px;
+      text-align: right;
+      vertical-align: middle;
+      margin-top: 2%;
+      margin-right: 4%;
+      color:black;
+      }
+      input {
+        margin-top: 30%;
+      }
+      textarea{
+        margin-top:30%;
+      }
+      
+      button {
+      width: 10%;
+      padding: 10px 0;
+      margin-left: 45%;
+      margin-top: 3%;
+      border-radius: 5px; 
+      border: none;
+      background: #8ebf42; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      button:hover {
+      background: #82b534;
+      }
+      @media (min-width: 568px) {
+      .project-details >div{
+      width: 50%;
+      }
+      label {
+      width: 50%;
+      font-size: 1.2rem;
+      }
+      input {
+      width: 60%;
+      }
+      textarea{
+        width: 100%;
+        height: 450px;
+      }
+      select, .children, .gender, .bdate-block {
+      width: calc(60% + 16px);
+      }
+      }
+      #profileImg
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+#smallprofileImg
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 5px;
+    float: right;
+}
+    </style>
+    
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper indigo darken-4">
+        <a href="/" class="brand-logo center">VIT PRO BUD</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+        <%  if(!user){%>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        <%  }else{ %>
+             <li><a href="/logout">logout</a></li>
+             <li><a href="/userprofile"> <img id="smallprofileImg" src="/<%= user.img.path %>" alt=""></a></li>
+        <%  } %>
+        
+        </ul>
+      </div>
+    </nav>
+
+        <div class="row" style="margin-top: 2.5rem;">
+          <div class="col s12 m12 l12">
+            <div class="card" style="height: 70rem;">
+              <span class="card-title project-details">Project details</span>
+              <div class="card-content" style="padding-left: 0rem;">
+                <form action="/projects/editproject/<%=project.id%>?_method=PUT" method="post" class="col s12 l12">
+                <div  class="project-details" style="display: block;">
+                  <div><label>Title</label>
+                    <input type="text" name="title" style="width: 800rem;" value="<%=project.title%>"required>
+                  </div>
+                  <div style="margin-top: 100px;"><label>Description</label>
+                    <%console.log(project.descrip);%>
+                    <textarea id="textarea1"  class="materialize-textarea" type="text" name="description" rows = "20" cols="10" required style="width: 800rem;"><%=project.descrip%></textarea>
+                  </div>
+                  
+
+                  <div><label>Technologies needed</label>
+                    <input type="text" value="<%=project.technologies%>"name="technology" required style="width: 800rem;">
+                  </div>
+                  <div><label>No. of members required</label>
+                    <%console.log(project.max);%>
+                    <input type="number" value="<%=project.max%>"name="members" required style="width: 800rem;">
+                  </div>
+                </div>
+              
+              <button type="submit" class="waves-effect waves-light black lighten-5 white-text center">Save</button>
+            </form>
+              </div>
+            </div>
+           
+          </div>
+
+         
+        </div>
+
+       
+  <script>
+      $('#textarea1').val("");
+  M.textareaAutoResize($('#textarea1'));
+  </script>
+    
+  </body>
+</html>

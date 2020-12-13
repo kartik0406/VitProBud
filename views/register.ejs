@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>VIT Pro Bud - Regsiter</title>
+  <style>
+    table {
+      margin-right: auto;
+      margin-left: auto;
+      width: 35%;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="nav-wrapper indigo darken-4">
+          <a href="/" class="brand-logo center">VIT PRO BUD</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+          
+          </ul>
+        </div>
+      </nav>
+  <!--NAV BAR ENDED-->
+  <table>
+    <tr>
+      <td style="text-align: center">
+        <ul style="list-style-type: none">
+          <li>
+            <a href="#" style="text-decoration: none"><img src="/public/images/google.png" alt="google" style="
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                  " />&nbsp&nbsp</a>
+            <a href="#" style="text-decoration: none"><img src="/public/images/face.svg" alt="facebook" style="
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                  " />&nbsp&nbsp</a>
+            <a href="#" style="text-decoration: none"><img src="/public/images/github.svg" alt="GITHUB" style="
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                  " />&nbsp&nbsp</a>
+            <a href="#" style="text-decoration: none"><img src="/public/images/ln.png" alt="LINKEDIN" style="
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                  " />&nbsp&nbsp</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+
+          <form action="/register" method="POST" enctype="multipart/form-data" id="registerForm">
+            <div class="container text-center">
+              <h5 id="msg" style="color: red; align-content: center;"></h5>
+            </div>
+
+            
+          
+
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="inputName" name="email" placeholder="Name" />
+            </div>
+
+            <div class="form-group col-md-12">
+              <input type="email" class="form-control" id="inputEmail4" name="username" placeholder="VIT Email" />
+            </div>
+            <div class="form-group col-md-12">
+              <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" />
+              <small id="passwordHelpInline" class="text-muted">
+                Must be 8-20 characters long.
+              </small>
+            </div>
+
+           
+            
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="inputInstitute" name="institute" placeholder="Institute" />
+            </div>
+           
+            <br>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="about" name="about" placeholder="About" />
+            </div>
+            <br>
+            <div class="form-group col-md-12">
+              <label>Upload your profile photo</label>
+              <input type="file" name="myImage" accept="image/*" />
+            </div>
+           
+            <br>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="inputLanguages" name="language"
+                placeholder="Favourite Programming Language" />
+            </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="githublink" name="github"
+                placeholder="Github Link" />
+            </div>
+            <div class="form-group col-md-12">
+              <input type="text" class="form-control" id="linkedinLink" name="linkedIn"
+                placeholder="LinkedIn Link" />
+            </div>
+           
+           <br><br>
+            <div>
+              &nbsp;&nbsp;
+              <button id="loginbtn" class="btn btn-primary indigo darken-4">Register</button>
+              
+            </div>
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

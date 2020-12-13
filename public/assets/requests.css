@@ -1,0 +1,39 @@
+body{
+    background-color: #394867;
+  }
+  
+  .abc{
+    display: inline-block;
+    background-color: white;
+  }
+  .element1{
+    position:relative;
+    left:45px;
+  }
+  .element2{
+    position: relative;
+    left:550px;
+  }
+  .element3{
+    position: relative;
+    left:820px;
+    
+  }
+  .element4{
+    position: relative;
+    left:990px;
+    
+  }
+  p{
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+  }
+  hr{
+    border-style: solid;
+    border-color: black;
+  }
+  .header{
+    background-color: white;
+  }
+  
